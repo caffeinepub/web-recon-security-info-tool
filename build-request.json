@@ -1,0 +1,35 @@
+{
+  "kind": "build_request",
+  "title": "Publish app to production",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Publish the Web Recon & Security Info Tool application to production (mainnet).",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "publish it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The application is successfully deployed to the Internet Computer mainnet.",
+        "All existing features (domain scan form, results display, scan history, cybersecurity theme) remain functional after publishing."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any existing functionality — this is a publish-only action."
+  ],
+  "nonGoals": [
+    "Adding new features",
+    "Modifying existing code or UI"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

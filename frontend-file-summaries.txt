@@ -1,0 +1,16 @@
+{
+  "frontend/src/index.css": "Global styles with cybersecurity-themed dark OKLCH color system, JetBrains Mono font import, neon green/cyan CSS custom properties, cyber card styles, terminal backgrounds, and animation utilities.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with JetBrains Mono font, cyber color palette (neon green/cyan, surface layers), neon box-shadow utilities, and scan animation keyframes.",
+  "frontend/src/services/reconApi.ts": "Reconnaissance API service that orchestrates calls to crt.sh (subdomains/SSL), HackerTarget (DNS/WHOIS/HTTP headers), and ipapi.co (hosting/geolocation), with serialization helpers for backend storage.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for backend operations: fetching scan history, fetching individual scans by domain, and saving new scan results with cache invalidation.",
+  "frontend/src/components/DomainScanForm.tsx": "Domain input form with validation, scan orchestration, loading status display, and backend save integration using the reconApi service.",
+  "frontend/src/components/SubdomainsSection.tsx": "Displays discovered subdomains from CT logs in a scrollable list with IP addresses and a copy-all button.",
+  "frontend/src/components/HostingSection.tsx": "Displays hosting and IP geolocation information (IP, ASN, org, city, country, timezone) in a key-value grid layout.",
+  "frontend/src/components/WhoisSection.tsx": "Displays WHOIS registration data (registrar, dates, name servers, registrant) with an optional raw text toggle.",
+  "frontend/src/components/DnsRecordsSection.tsx": "Displays DNS records (A, MX, NS, TXT, etc.) in a color-coded table with type badges and record counts.",
+  "frontend/src/components/SslCertificateSection.tsx": "Displays SSL certificate details (issuer, validity dates, SANs) with expiry warnings and certificate transparency data.",
+  "frontend/src/components/HttpHeadersSection.tsx": "Displays HTTP response headers with security analysis, highlighting present/missing security headers and sensitive information disclosures.",
+  "frontend/src/components/ScanResults.tsx": "Tabbed results container organizing all 6 reconnaissance sections (subdomains, hosting, WHOIS, DNS, SSL, headers) with domain header and error indicators.",
+  "frontend/src/components/ScanHistory.tsx": "Sidebar panel showing past scans fetched from the backend, sorted by timestamp, with click-to-reload functionality.",
+  "frontend/src/App.tsx": "Main application layout with sticky header, scan form, results panel, history sidebar, and footer with attribution link."
+}

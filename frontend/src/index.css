@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.375rem;
+
+    /* Light mode (unused - app is always dark) */
+    --background: 0.12 0.01 240;
+    --foreground: 0.92 0.02 150;
+    --card: 0.15 0.01 240;
+    --card-foreground: 0.92 0.02 150;
+    --popover: 0.15 0.01 240;
+    --popover-foreground: 0.92 0.02 150;
+    --primary: 0.75 0.18 155;
+    --primary-foreground: 0.08 0.01 240;
+    --secondary: 0.20 0.01 240;
+    --secondary-foreground: 0.85 0.02 150;
+    --muted: 0.18 0.01 240;
+    --muted-foreground: 0.55 0.03 200;
+    --accent: 0.65 0.20 175;
+    --accent-foreground: 0.08 0.01 240;
+    --destructive: 0.60 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.25 0.03 220;
+    --input: 0.20 0.02 230;
+    --ring: 0.75 0.18 155;
+    --chart-1: 0.75 0.18 155;
+    --chart-2: 0.65 0.20 175;
+    --chart-3: 0.60 0.22 25;
+    --chart-4: 0.70 0.15 200;
+    --chart-5: 0.80 0.12 120;
+    --sidebar: 0.10 0.01 240;
+    --sidebar-foreground: 0.92 0.02 150;
+    --sidebar-primary: 0.75 0.18 155;
+    --sidebar-primary-foreground: 0.08 0.01 240;
+    --sidebar-accent: 0.18 0.01 240;
+    --sidebar-accent-foreground: 0.85 0.02 150;
+    --sidebar-border: 0.22 0.03 220;
+    --sidebar-ring: 0.75 0.18 155;
+
+    /* Custom cyber tokens */
+    --neon-green: oklch(0.78 0.22 145);
+    --neon-cyan: oklch(0.72 0.18 195);
+    --neon-green-dim: oklch(0.55 0.16 145);
+    --neon-cyan-dim: oklch(0.50 0.14 195);
+    --surface-0: oklch(0.09 0.01 240);
+    --surface-1: oklch(0.12 0.01 240);
+    --surface-2: oklch(0.16 0.015 235);
+    --surface-3: oklch(0.20 0.015 235);
+    --terminal-text: oklch(0.88 0.04 145);
+    --warning: oklch(0.78 0.18 75);
+    --success: oklch(0.72 0.20 145);
+    --danger: oklch(0.62 0.22 25);
+  }
+
+  .dark {
+    --background: 0.09 0.01 240;
+    --foreground: 0.92 0.02 150;
+    --card: 0.12 0.01 240;
+    --card-foreground: 0.92 0.02 150;
+    --popover: 0.14 0.01 240;
+    --popover-foreground: 0.92 0.02 150;
+    --primary: 0.75 0.18 155;
+    --primary-foreground: 0.08 0.01 240;
+    --secondary: 0.18 0.01 240;
+    --secondary-foreground: 0.85 0.02 150;
+    --muted: 0.16 0.01 240;
+    --muted-foreground: 0.55 0.03 200;
+    --accent: 0.65 0.20 175;
+    --accent-foreground: 0.08 0.01 240;
+    --destructive: 0.60 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.22 0.03 220;
+    --input: 0.18 0.02 230;
+    --ring: 0.75 0.18 155;
+    --chart-1: 0.75 0.18 155;
+    --chart-2: 0.65 0.20 175;
+    --chart-3: 0.60 0.22 25;
+    --chart-4: 0.70 0.15 200;
+    --chart-5: 0.80 0.12 120;
+    --sidebar: 0.08 0.01 240;
+    --sidebar-foreground: 0.92 0.02 150;
+    --sidebar-primary: 0.75 0.18 155;
+    --sidebar-primary-foreground: 0.08 0.01 240;
+    --sidebar-accent: 0.14 0.01 240;
+    --sidebar-accent-foreground: 0.85 0.02 150;
+    --sidebar-border: 0.20 0.03 220;
+    --sidebar-ring: 0.75 0.18 155;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--surface-0);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--surface-1);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--neon-green-dim);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-green);
+  }
+}
+
+@layer utilities {
+  .font-mono-cyber {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  .neon-text-green {
+    color: var(--neon-green);
+    text-shadow: 0 0 8px oklch(0.78 0.22 145 / 0.6);
+  }
+
+  .neon-text-cyan {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px oklch(0.72 0.18 195 / 0.6);
+  }
+
+  .neon-border-green {
+    border-color: var(--neon-green-dim);
+    box-shadow: 0 0 8px oklch(0.78 0.22 145 / 0.2);
+  }
+
+  .neon-border-cyan {
+    border-color: var(--neon-cyan-dim);
+    box-shadow: 0 0 8px oklch(0.72 0.18 195 / 0.2);
+  }
+
+  .cyber-card {
+    background-color: var(--surface-2);
+    border: 1px solid var(--neon-green-dim);
+    box-shadow: 0 0 12px oklch(0.78 0.22 145 / 0.08), inset 0 1px 0 oklch(0.78 0.22 145 / 0.05);
+  }
+
+  .cyber-card-cyan {
+    background-color: var(--surface-2);
+    border: 1px solid var(--neon-cyan-dim);
+    box-shadow: 0 0 12px oklch(0.72 0.18 195 / 0.08), inset 0 1px 0 oklch(0.72 0.18 195 / 0.05);
+  }
+
+  .terminal-bg {
+    background-color: var(--surface-1);
+    border: 1px solid oklch(0.25 0.03 220);
+  }
+
+  .scan-pulse {
+    animation: scan-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scan-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(oklch(0.78 0.22 145 / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.78 0.22 145 / 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
