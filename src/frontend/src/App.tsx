@@ -1,11 +1,28 @@
 import { Toaster } from "@/components/ui/sonner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Database, Heart, Search, Shield, Terminal, Zap } from "lucide-react";
+import {
+  Database,
+  FileSearch,
+  Heart,
+  KeyRound,
+  Radio,
+  Search,
+  Shield,
+  ShieldCheck,
+  Terminal,
+  Waves,
+  Zap,
+} from "lucide-react";
 import { useState } from "react";
+import { BruteForceAnalyzer } from "./components/BruteForceAnalyzer";
 import { CVEDashboard } from "./components/CVEDashboard";
+import { DDoSAnalyzer } from "./components/DDoSAnalyzer";
 import { DomainScanForm } from "./components/DomainScanForm";
+import { IntelFetchDashboard } from "./components/IntelFetchDashboard";
+import { OWASPChecker } from "./components/OWASPChecker";
 import { ScanHistory } from "./components/ScanHistory";
 import { ScanResults } from "./components/ScanResults";
+import { WhoisLookupDashboard } from "./components/WhoisLookupDashboard";
 import type { ReconData } from "./services/reconApi";
 
 export default function App() {
@@ -91,11 +108,76 @@ export default function App() {
               <Search className="w-3.5 h-3.5" />
               Domain Recon
             </TabsTrigger>
+            <TabsTrigger
+              data-ocid="nav.intel.tab"
+              value="intel"
+              className="font-mono text-xs px-4 py-2 rounded data-[state=active]:bg-[oklch(0.18_0.02_290)] data-[state=active]:text-[oklch(0.76_0.18_290)] data-[state=active]:shadow-none flex items-center gap-2 text-[oklch(0.55_0.06_220)]"
+            >
+              <Radio className="w-3.5 h-3.5" />
+              Intel Fetch
+            </TabsTrigger>
+            <TabsTrigger
+              data-ocid="nav.whois.tab"
+              value="whois"
+              className="font-mono text-xs px-4 py-2 rounded data-[state=active]:bg-[oklch(0.18_0.02_60)] data-[state=active]:text-[oklch(0.78_0.18_60)] data-[state=active]:shadow-none flex items-center gap-2 text-[oklch(0.55_0.06_220)]"
+            >
+              <FileSearch className="w-3.5 h-3.5" />
+              WHOIS
+            </TabsTrigger>
+            <TabsTrigger
+              data-ocid="nav.owasp.tab"
+              value="owasp"
+              className="font-mono text-xs px-4 py-2 rounded data-[state=active]:bg-[oklch(0.18_0.03_45)] data-[state=active]:text-[oklch(0.78_0.18_45)] data-[state=active]:shadow-none flex items-center gap-2 text-[oklch(0.55_0.06_220)]"
+            >
+              <ShieldCheck className="w-3.5 h-3.5" />
+              OWASP
+            </TabsTrigger>
+            <TabsTrigger
+              data-ocid="nav.ddos.tab"
+              value="ddos"
+              className="font-mono text-xs px-4 py-2 rounded data-[state=active]:bg-[oklch(0.18_0.03_145)] data-[state=active]:text-[oklch(0.78_0.22_145)] data-[state=active]:shadow-none flex items-center gap-2 text-[oklch(0.55_0.06_220)]"
+            >
+              <Waves className="w-3.5 h-3.5" />
+              DDoS Analysis
+            </TabsTrigger>
+            <TabsTrigger
+              data-ocid="nav.bruteforce.tab"
+              value="bruteforce"
+              className="font-mono text-xs px-4 py-2 rounded data-[state=active]:bg-[oklch(0.18_0.03_25)] data-[state=active]:text-[oklch(0.75_0.22_25)] data-[state=active]:shadow-none flex items-center gap-2 text-[oklch(0.55_0.06_220)]"
+            >
+              <KeyRound className="w-3.5 h-3.5" />
+              Brute Force
+            </TabsTrigger>
           </TabsList>
 
           {/* CVE Intelligence Tab */}
           <TabsContent value="cve" className="mt-0">
             <CVEDashboard />
+          </TabsContent>
+
+          {/* Intel Fetch Tab */}
+          <TabsContent value="intel" className="mt-0">
+            <IntelFetchDashboard />
+          </TabsContent>
+
+          {/* WHOIS Lookup Tab */}
+          <TabsContent value="whois" className="mt-0">
+            <WhoisLookupDashboard />
+          </TabsContent>
+
+          {/* OWASP Checker Tab */}
+          <TabsContent value="owasp" className="mt-0">
+            <OWASPChecker />
+          </TabsContent>
+
+          {/* DDoS Analysis Tab */}
+          <TabsContent value="ddos" className="mt-0">
+            <DDoSAnalyzer />
+          </TabsContent>
+
+          {/* Brute Force Tab */}
+          <TabsContent value="bruteforce" className="mt-0">
+            <BruteForceAnalyzer />
           </TabsContent>
 
           {/* Domain Recon Tab */}
